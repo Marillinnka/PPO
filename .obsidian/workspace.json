@@ -1,32 +1,22 @@
 {
   "main": {
-    "id": "c5ed4a223eeb2e59",
+    "id": "8b5eb113c8948859",
     "type": "split",
     "children": [
       {
-        "id": "0a5ed23e1af67ff7",
+        "id": "afbc9db4c728c1e8",
         "type": "tabs",
         "children": [
           {
-            "id": "6dba83095b4811f4",
+            "id": "eafa4f3409cc5b4c",
             "type": "leaf",
-            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Архитектурные факторы.md",
+                "file": "1. Исходные сведения/Архитектурные факторы.md",
                 "mode": "source",
                 "source": false
-              },
-              "pinned": true
-            }
-          },
-          {
-            "id": "c29f8c3bf8da9c08",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
+              }
             }
           }
         ]
@@ -35,15 +25,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "40b876cfb53f45d9",
+    "id": "4e7bd91f4f572ee1",
     "type": "split",
     "children": [
       {
-        "id": "ac45982dea2967f2",
+        "id": "f81f7af16bf009eb",
         "type": "tabs",
         "children": [
           {
-            "id": "2fcf3b01022fc888",
+            "id": "84c18fb0d718cb0c",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -53,7 +43,7 @@
             }
           },
           {
-            "id": "ff5462314ba34200",
+            "id": "7c7a00f89299c41a",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -68,35 +58,34 @@
             }
           },
           {
-            "id": "996e3d04c0e0e884",
+            "id": "8db70499144e44d3",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 344.5
   },
   "right": {
-    "id": "d56e11db0565b736",
+    "id": "d6ec1afbf7d5f977",
     "type": "split",
     "children": [
       {
-        "id": "9e15502f004301bf",
+        "id": "fb94412d07f46ebc",
         "type": "tabs",
         "children": [
           {
-            "id": "f011f77fc731bc83",
+            "id": "3ed8e7a6c0bac9bb",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Архитектурные факторы.md",
+                "file": "1. Исходные сведения/Архитектурные факторы.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,19 +97,19 @@
             }
           },
           {
-            "id": "73b9bf1f00986fa8",
+            "id": "3cf89b199897b6ef",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Архитектурные факторы.md",
+                "file": "1. Исходные сведения/Архитектурные факторы.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "6087654bc08d9e0a",
+            "id": "4806bc162e703c05",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -131,12 +120,12 @@
             }
           },
           {
-            "id": "9b64ef90ba6d0a5e",
+            "id": "9493a50c05a19a10",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Архитектурные факторы.md"
+                "file": "1. Исходные сведения/Архитектурные факторы.md"
               }
             }
           }
@@ -157,9 +146,9 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "6dba83095b4811f4",
+  "active": "eafa4f3409cc5b4c",
   "lastOpenFiles": [
-    "Без названия.md",
-    "Архитектурные факторы.md"
+    "ADR/2023-10.29 - Выбор архитектурной формы системы.md",
+    "1. Исходные сведения/Архитектурные факторы.md"
   ]
 }
