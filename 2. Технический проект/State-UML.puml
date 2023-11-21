@@ -1,0 +1,22 @@
+@startuml stateDiagram
+
+state "В продаже" as OnSale
+state "Бронь" as Reservation
+state "Куплен" as Purchased
+state "Модерация" as Moderation
+state "Возврат" as Refund
+state "Аннулирован" as Canceled
+
+[*] --> OnSale
+OnSale --> Reservation : Бронирование
+Reservation --> OnSale : Отмена брони
+Reservation --> Purchased : Покупка
+Purchased --> Moderation : Отмена концерта
+Purchased --> Moderation : Покупатель оформил возврат
+Purchased --> Canceled : Концерт проведён
+Moderation --> Refund : Прошёл модерацию
+Refund --> OnSale : Билет возвращён
+OnSale --> Canceled : Отмена концерта
+Canceled --> [*]
+
+@enduml
