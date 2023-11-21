@@ -1,0 +1,100 @@
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+title Component
+
+Container(mobile_app, "Мобильное приложение", "Flutter", "")
+
+System_Boundary(message_processing_system, "Web API"){
+
+    Container(auth_controller, "AuthController", "c#, .net", "Регистрация, авторизация в системе")
+
+    Container(reservation_controller, "ReservationController", "c#, .net", "Проверка возможности бронирования, бронирование, отмена брони")
+
+    Container(request_controller, "RequestController", "c#, .net", "Управление заявками на создание концерта, регистрацию организатора, возврат средств")
+
+    Container(concert_controller, "ConcertController", "c#, .net", "Управление концертами (создание, редактирование, отмена )")
+
+    Container(search_controller, "SearchController", "c#, .net", "Поиск (фильтрация, сортировка) концертов. Поиск возможных размещений по концерту")
+
+    Container(content_controller, "ContentController", "c#, .net", "Выдача контента концертов (название, описание, фото и т.д. )")
+
+    Container(hall_controller, "HallController", "c#, .net", "Формирование справочника с концертными залами")
+
+
+
+    Container(auth_service, "AuthService", "c#, .net", "")
+
+    Container(reservation_service, "ReservationService", "c#, .net", "")
+
+    Container(request_service, "RequestService", "c#, .net", "")
+
+    Container(concert_service, "ConcertService", "c#, .net", "")
+
+    Container(search_service, "SearchService", "c#, .net", "")
+
+    Container(content_service, "ContentService", "c#, .net", "")
+
+    Container(hall_service, "HallService", "c#, .net", "")
+    
+
+
+
+    Container(user_repository, "UserRepository", "c#, .net", "")
+
+    Container(reservation_repository, "ReservationRepository", "c#, .net", "")
+
+    Container(request_repository, "RequestRepository", "c#, .net", "")
+
+    Container(concert_repository, "ConcertRepository", "c#, .net", "")
+
+    Container(hall_repository, "HallRepository", "c#, .net", "")
+}
+
+ContainerDb(DataBase, "База данных", "PostgreSQL", "")
+
+System_Ext(FNS, "ФНС API [Программная система]", "Автоматизация извлечения данных из Единого государственного реестра юридических лиц (ЕГРЮЛ) и Единого государственного реестра индивидуальных предпринимателей (ЕГРИП)")
+
+System_Ext(Email, "Cистема электронной почты [Программная система]", "Поставщик системы отправки электронной почты")
+
+System_Ext(PaymentSystem, "Электронная платежная система [Программная система]", "Интернет-эквайринг, прием платежей")
+
+
+Rel(mobile_app, auth_controller, "[json, HTTPS] Запросы регистрации,авторизации")
+Rel(mobile_app, reservation_controller, "[json, HTTPS] Запросы верификации и бронирования")
+Rel(mobile_app, request_controller, "[json, HTTPS] Получить заявки, дать ответ на заявку")
+Rel(mobile_app, concert_controller, "[json, HTTPS] Запросы создания, редактирования")
+Rel(mobile_app, search_controller, "[json, HTTPS] Поисковые запросы")
+Rel(mobile_app, content_controller, "[json, HTTPS] Запросы на получение и создание контента для концертов")
+Rel(mobile_app, hall_controller, "[json, HTTPS] CRUD запросы")
+
+Rel(auth_controller, auth_service, "")
+Rel(reservation_controller, reservation_service, "")
+Rel(request_controller, request_service, "")
+Rel(concert_controller, concert_service, "")
+Rel(search_controller, search_service, "")
+Rel(content_controller, content_service, "")
+Rel(hall_controller, hall_service, "")
+
+Rel(reservation_service, request_service, "")
+Rel(concert_service, request_service, "")
+
+Rel(auth_service, user_repository, "")
+Rel(reservation_service, reservation_repository, "")
+Rel(request_service, request_repository, "")
+Rel(concert_service, concert_repository, "")
+Rel(search_service, concert_repository, "")
+Rel(content_service, concert_repository, "")
+Rel(content_service, hall_repository, "")
+Rel(hall_service, hall_repository, "")
+
+Rel(user_repository, DataBase, "Запись/чтение")
+Rel(reservation_repository, DataBase, "Запись/чтение")
+Rel(request_repository, DataBase, "Запись/чтение")
+Rel(concert_repository, DataBase, "Запись/чтение")
+Rel(hall_repository, DataBase, "Запись/чтение")
+
+
+Rel(auth_service, FNS, "Проверка организатора")
+Rel(auth_service, Email, "Отправка подтверждения регистрации")
+Rel(reservation_service, Email, "Отправка билетов")
+Rel(reservation_service, PaymentSystem, "Оплата")
