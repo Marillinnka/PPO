@@ -1,0 +1,60 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Dynamic.puml
+
+<style>
+component {
+  BackGroundColor #F0E68C
+  LineThickness 1
+  LineColor #70003a
+}
+</style>
+
+package "Разработка" {
+    component Development as "Разработчик" 
+    component SourceControlSystem as "Система управления исходным кодом" 
+    component CIpipeline as"CI-пайплайн: сборка, unit тесты" 
+    component CDpipeline as"CD-пайплайн: запуск деплоя" 
+
+    Development -right-> SourceControlSystem : "Commit"
+    SourceControlSystem -right-> CIpipeline : "Триггер"
+    CIpipeline -right-> CDpipeline : "Deploy"
+} 
+
+package "DockerHub" {
+    component DockerRegistry as "Docker Registry" 
+
+    CIpipeline -down-> DockerRegistry : "Публикация образов"
+    CDpipeline -down-> DockerRegistry : "Получить образ"
+} 
+
+package "Сервер" {
+    component TestEnvironment as "Тестовое окружение приложения" 
+    component E2Etest as "E2E тесты" 
+    component ProductionEnvironment as "Production окружение приложения"
+
+    CDpipeline -right-> TestEnvironment : "Deploy"
+    TestEnvironment -down-> E2Etest : "Запуск тестов"
+    TestEnvironment -right-> ProductionEnvironment : "Deploy"
+} 
+
+package "Внешние системы тестового окружения" {
+    component DBtest as "DB" 
+    component RabbitMQtest as "RabbitMQ" 
+    component S3test as "S3" 
+
+    TestEnvironment -up-> DBtest
+    TestEnvironment -up-> RabbitMQtest
+    TestEnvironment -up-> S3test
+} 
+
+package "Внешние системы prod окружения" {
+    component DBprod as "DB" 
+    component RabbitMQprod as "RabbitMQ" 
+    component S3prod as "S3" 
+
+    ProductionEnvironment -up-> DBprod
+    ProductionEnvironment -up-> RabbitMQprod
+    ProductionEnvironment -up-> S3prod
+} 
+
+@enduml
