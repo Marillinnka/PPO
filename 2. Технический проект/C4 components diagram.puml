@@ -87,6 +87,7 @@ search_service -----> ReadDataBase
 content_service -----> ReadDataBase
 hall_service -----> ReadDataBase
 auth_controller ----> ReadDataBase
+auth_service ----> ReadDataBase
 
 reservation_service -----> MessageBus
 request_service -----> MessageBus
