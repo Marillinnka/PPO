@@ -11,11 +11,9 @@
             "id": "7e23f6006d307042",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "ADR/10. 2023-12-10 Выбор брокера сообщения.md",
-                "mode": "source",
-                "source": false
+                "file": "out/deployment-diagram.png"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ADR/10. 2023-12-10 Выбор брокера сообщения.md",
+                "file": "out/deployment-diagram.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ADR/10. 2023-12-10 Выбор брокера сообщения.md",
+                "file": "out/deployment-diagram.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ADR/10. 2023-12-10 Выбор брокера сообщения.md"
+                "file": "out/deployment-diagram.png"
               }
             }
           }
@@ -148,20 +146,20 @@
   },
   "active": "7e23f6006d307042",
   "lastOpenFiles": [
-    "ADR/9. 2023-11-15 Выбор модели и методологии разработки ПО.md",
+    "out/c4-containers-diagram.png",
+    "1. Исходные сведения/Архитектурные факторы.md",
+    "out/deployment-diagram.png",
+    "out/state-diagram.png",
+    "out/infrastructure-diagram.png",
+    "out/c4-components-diagram.png",
+    "out/c4-context-diagram.png",
+    "out/actitvity-diagram.png",
     "ADR/10. 2023-12-10 Выбор брокера сообщения.md",
+    "ADR/9. 2023-11-15 Выбор модели и методологии разработки ПО.md",
     "ADR/1. 2023-10-29 Выбор архитектурной формы системы.md",
     "2023-12-12.md",
-    "out/Infrastructure diagram.png",
-    "out/Deployment diagram.png",
-    "out/ActitvityDiagram.png",
-    "out/StateDiagram.png",
-    "out/C4 components diagram.png",
     "2. Технический проект/C4 components diagram.puml",
     "2. Технический проект/C4 components diagram (4).puml",
-    "out/C4 components diagram (6).png",
-    "1. Исходные сведения/Архитектурные факторы.md",
-    "out/C4 context diagram.png",
-    "out/C4 containers diagram.png"
+    "out/C4 components diagram (6).png"
   ]
 }
